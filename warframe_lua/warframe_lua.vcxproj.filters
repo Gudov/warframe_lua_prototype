@@ -16,6 +16,9 @@
     <Filter Include="lua">
       <UniqueIdentifier>{78141e2e-1006-4142-ac5c-49f962adb1e6}</UniqueIdentifier>
     </Filter>
+    <Filter Include="window">
+      <UniqueIdentifier>{3f547868-eeb0-4ed5-b11e-e13a97ef5707}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -117,8 +120,32 @@
     <ClCompile Include="lua\lcode.c">
       <Filter>lua</Filter>
     </ClCompile>
+    <ClCompile Include="utils.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="lua_funcs.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
     <ClCompile Include="dump.cpp">
-      <Filter>Файлы заголовков</Filter>
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="console.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="config.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="lua_load.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="lua_utils.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="proto.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="aes.cpp">
+      <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -196,8 +223,47 @@
     <ClInclude Include="lua\lauxlib.h">
       <Filter>lua</Filter>
     </ClInclude>
-    <ClInclude Include="dump.h">
+    <ClInclude Include="utils.h">
+      <Filter>Исходные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="externs.h">
+      <Filter>Исходные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="structs.h">
+      <Filter>Исходные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="lua_funcs.h">
+      <Filter>Исходные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="some_old.h">
       <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="dump.h">
+      <Filter>Исходные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="console.h">
+      <Filter>Исходные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="config.h">
+      <Filter>Исходные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="json.hpp">
+      <Filter>Исходные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="lua_load.h">
+      <Filter>Исходные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="lua_utils.h">
+      <Filter>Исходные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="proto.h">
+      <Filter>Исходные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="aes.h">
+      <Filter>Исходные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="sha.h">
+      <Filter>Исходные файлы</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -20,13 +20,18 @@ _TEXT SEGMENT
 		push    rbp
 		push    rbx
 		push    rsi
-		lea     rbp, [r11-148h]
-		sub     rsp, 230h
+		lea     rbp, [r11-128h]
+		sub     rsp, 210h
 
 		mov		rax, qword ptr load_bytecode
 		add		rax, 14h
 		jmp		rax
 	imp_load_bytecode ENDP
+
+	PUBLIC lay_load_bytecode
+	lay_load_bytecode PROC
+
+	lay_load_bytecode ENDP
 
 	PUBLIC imp_lua_bytecode_load
 	imp_lua_bytecode_load PROC

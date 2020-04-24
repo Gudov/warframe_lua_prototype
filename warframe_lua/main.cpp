@@ -63,11 +63,11 @@ bool selffcall = false;
 bool pre_init_compelte = false;
 void lua_pushlstring_fake(lua_State *L, const char *s, size_t len)
 {
-	if (!pre_init_compelte)
+	/*if (!pre_init_compelte)
 	{
 		pre_init_compelte = true;
 		load_lua_funcs(L);
-	}
+	}*/
 
 	if (!selffcall)
 	{
@@ -92,6 +92,8 @@ __int64 __fastcall lua_load_pseudo(lua_State *L, __int64 a2, char *data, const c
 		load_const_config(L);
 		autoexec(L);
 	}
+
+	//MessageBox(0, "", "", 0);
 
 	lua_getglobal(L, "hook_pre_load");
 	lua_pushstring(L, get_temp_path());
@@ -137,11 +139,11 @@ void load_offsets()
 	char pattern_lua_udump[] = "xxxxxxxxxxxxxx";
 	luaU_undump_or = findSignature((unsigned char *)GetModuleHandle("Warframe.x64.exe"),
 		sig_lua_udump, pattern_lua_udump);
-
-	unsigned char sig_load_bytecode[] = "\x48\x8B\x05\x00\x00\x00\x00\x48\x33\xC4\x48\x89\x85\x00\x00\x00\x00\x48\x8B\x72";
-	char pattern_load_bytecode[] = "xxx????xxxxxx????xxx";
-	load_bytecode = (void*)(((unsigned long long)findSignature((unsigned char *)GetModuleHandle("Warframe.x64.exe"),
-		sig_load_bytecode, pattern_load_bytecode)) - 0x14);
+	//MessageBoxA(NULL, "a1", "a1", NULL);
+	unsigned char sig_load_bytecode[] = "\x4C\x8B\xDC\x55\x53\x56\x49\x8D\xAB\x00\x00\x00\x00\x48\x81\xEC\x00\x00\x00\x00\x48\x8B\x05\x00\x00\x00\x00\x48\x33\xC4\x48\x89\x85\x00\x00\x00\x00\x48\x8B\x72\x50";
+	char pattern_load_bytecode[] = "xxxxxxxxx????xxx????xxx????xxxxxx????xxxx";
+	load_bytecode = (void*)((unsigned long long)findSignature((unsigned char *)GetModuleHandle("Warframe.x64.exe"),
+		sig_load_bytecode, pattern_load_bytecode));
 
 #else
 	lua_load_or = lua_pcall_or;

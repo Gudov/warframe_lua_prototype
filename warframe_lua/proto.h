@@ -1,6 +1,6 @@
 #pragma once
 
-#define REMOTE
+//#define REMOTE
 
 #include <vector>
 #include <string>

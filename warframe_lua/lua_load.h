@@ -16,4 +16,4 @@ extern "C"
 
 Proto* fake_luaU_undump(lua_State* L, ZIO* Z, Mbuffer* buff, const char* name);
 __int64 fake_lua_bytecode_load(lua_State **a1, void *sc, float a3);
-__int64 lua_load_bytecode(script_mng *script_manager, lua_struct *lua_st, float a3, __int64 a4, __int64 a5, __int64 a6, __int64 a7);
+__int64 lua_load_bytecode(script_mng *script_manager, lua_struct *lua_st);

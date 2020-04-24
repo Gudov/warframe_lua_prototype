@@ -49,6 +49,11 @@ void hextobin(const char* src, char* target)
 
 void load_lua_funcs(lua_State *L)
 {
+	static bool lua_func_loaded = false; // some strange thing happed here
+	if (lua_func_loaded) {
+		return;
+	}
+	lua_func_loaded = true;
 	lua_pushcfunction(L, lua_to_token);
 	lua_setfield(L, LUA_GLOBALSINDEX, "to_token");
 	lua_pushcfunction(L, lua_from_token);

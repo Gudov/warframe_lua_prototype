@@ -20,8 +20,9 @@ __int64 fake_lua_bytecode_load(lua_State **a1, void *sc, float a3)
 	return imp_lua_bytecode_load(a1, sc, a3);
 }
 
-__int64 lua_load_bytecode(script_mng *script_manager, lua_struct *lua_st, float a3, __int64 a4, __int64 a5, __int64 a6, __int64 a7)
+__int64 lua_load_bytecode(script_mng *script_manager, lua_struct *lua_st)
 {
 	set_dump_path(lua_st->path, *((lua_st->name_16) + 2));
-	return imp_load_bytecode(script_manager, lua_st, a3, a4, a5, a6, a7);
+	__int64 result = imp_load_bytecode(script_manager, lua_st);
+	return result;
 }
