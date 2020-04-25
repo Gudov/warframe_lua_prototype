@@ -144,9 +144,6 @@
     <ClCompile Include="proto.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="aes.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <MASM Include="lua_imp.asm">
@@ -257,12 +254,6 @@
       <Filter>Исходные файлы</Filter>
     </ClInclude>
     <ClInclude Include="proto.h">
-      <Filter>Исходные файлы</Filter>
-    </ClInclude>
-    <ClInclude Include="aes.h">
-      <Filter>Исходные файлы</Filter>
-    </ClInclude>
-    <ClInclude Include="sha.h">
       <Filter>Исходные файлы</Filter>
     </ClInclude>
   </ItemGroup>

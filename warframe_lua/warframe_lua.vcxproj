@@ -137,7 +137,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="aes.cpp" />
     <ClCompile Include="config.cpp" />
     <ClCompile Include="console.cpp" />
     <ClCompile Include="proto.cpp" />
@@ -188,7 +187,6 @@
     </MASM>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="aes.h" />
     <ClInclude Include="config.h" />
     <ClInclude Include="console.h" />
     <ClInclude Include="proto.h" />
@@ -221,7 +219,6 @@
     <ClInclude Include="lua_funcs.h" />
     <ClInclude Include="lua_load.h" />
     <ClInclude Include="lua_utils.h" />
-    <ClInclude Include="sha.h" />
     <ClInclude Include="some_old.h" />
     <ClInclude Include="structs.h" />
     <ClInclude Include="utils.h" />
