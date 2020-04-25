@@ -50,9 +50,6 @@ void console_open()
 
 void console_loop()
 {
-#ifdef REMOTE
-	set_luarun("auth");
-#endif
 	while (true)
 	{
 		char buff[2048];

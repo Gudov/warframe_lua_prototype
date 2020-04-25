@@ -47,6 +47,7 @@ extern "C"
 	void *war_str_concat;
 	void *load_bytecode;
 	void *damage_f;
+	void *set_lua_type;
 }
 
 #include "externs.h"
@@ -128,7 +129,7 @@ void load_offsets()
 	ori_lua_pushlstring = findSignature((unsigned char *)GetModuleHandle("Warframe.x64.exe"), sig_pushlstring, pattern_pushlstring);
 	ori_lua_pushlstring = (void(*)())((unsigned __int64)ori_lua_pushlstring - 0xF);
 	lua_pushlstring_offset = (void(*)())((unsigned __int64)ori_lua_pushlstring + 0x29);
-#ifndef REMOTE
+
 	unsigned char sig_lua_load[] = "\x49\x89\x53\xE0\x4D\x85";
 	char pattern_lua_load[] = "xxxxxx";
 	lua_load_or = findSignature((unsigned char *)GetModuleHandle("Warframe.x64.exe"),
@@ -144,22 +145,14 @@ void load_offsets()
 	char pattern_load_bytecode[] = "xxxxxxxxx????xxx????xxx????xxxxxx????xxxx";
 	load_bytecode = (void*)((unsigned long long)findSignature((unsigned char *)GetModuleHandle("Warframe.x64.exe"),
 		sig_load_bytecode, pattern_load_bytecode));
-
-#else
-	lua_load_or = lua_pcall_or;
-	luaU_undump_or = lua_pcall_or;
-	load_bytecode = lua_pcall_or;
-#endif
 }
 
 void make_hooks()
 {
 	hook(ori_lua_pushlstring, lua_pushlstring_fake);
-#ifndef REMOTE
 	hook(lua_load_or, lua_load_pseudo);
 	hook(luaU_undump_or, fake_luaU_undump);
 	hook(load_bytecode, lua_load_bytecode);
-#endif
 }
 
 int main()
