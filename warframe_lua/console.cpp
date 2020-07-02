@@ -73,6 +73,8 @@ void console_loop()
 			list_all_protos();
 		} else if (!strcmp(buff, "catconst")) {
 			cat_all_consts();
+		} else if (!strcmp(buff, "dumphash")) {
+			dump_hash();
 		} else if (!strcmp(buff, "cload")) {
 			char name[256]; fscanf(fpin, "%s", name);
 			const_to_load = name;
@@ -81,7 +83,7 @@ void console_loop()
 			set_luarun(name);
 		} else {
 			fprintf(fpout, "\nwrong command\n");
-			fflush(fpout);
 		}
+		fflush(fpout);
 	}
 }

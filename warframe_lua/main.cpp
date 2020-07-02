@@ -58,6 +58,7 @@ int(*luaB_pcall_ori)(lua_State *L);
 int(*luaB_load_ori)(lua_State *L);
 int(*luaB_loadstring_ori)(lua_State *L);
 int(*lua_pcall_ori)(lua_State *L, int nargs, int nresults, int errfunc);
+unsigned int(*str_hash_ori)(char* a1, unsigned int len, int a3);
 
 bool selffcall = false;
 
@@ -145,6 +146,11 @@ void load_offsets()
 	char pattern_load_bytecode[] = "xxxxxxxxx????xxx????xxx????xxxxxx????xxxx";
 	load_bytecode = (void*)((unsigned long long)findSignature((unsigned char *)GetModuleHandle("Warframe.x64.exe"),
 		sig_load_bytecode, pattern_load_bytecode));
+
+	unsigned char sig_hash_str[] = "\x44\x8B\xCA\x4C\x8B\xD1\x45\x33\xC8\x83\xFA\x04\x7C\x3A\x44\x8B\xC2\x49\xC1\xE8\x02\x41\x8B\xC0\xF7\xD8\x8D\x14\x82\x0F\x1F\x00\x41\x69\x02\x00\x00\x00\x00\x49\x83\xC2\x04\x45\x69\xC9\x00\x00\x00\x00\x8B\xC8\xC1\xE9\x18\x33\xC8\x69\xC9\x00\x00\x00\x00\x44\x33\xC9\x49\x83\xE8\x01\x75\xD8\x83\xEA\x01\x74\x20";
+	char pattern_hash_str[] = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx????xxxxxxx????xxxxxxxxx????xxxxxxxxxxxxxx";
+	str_hash_ori = (unsigned int(*)(char *, unsigned int, int))findSignature((unsigned char*)GetModuleHandle("Warframe.x64.exe"),
+		sig_hash_str, pattern_hash_str);
 }
 
 void make_hooks()
@@ -153,6 +159,7 @@ void make_hooks()
 	hook(lua_load_or, lua_load_pseudo);
 	hook(luaU_undump_or, fake_luaU_undump);
 	hook(load_bytecode, lua_load_bytecode);
+	hook(str_hash_ori, fake_hash);
 }
 
 int main()
