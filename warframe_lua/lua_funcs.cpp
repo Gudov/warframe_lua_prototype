@@ -62,7 +62,7 @@ void load_lua_funcs(lua_State *L)
 	lua_pushcfunction(L, lua_from_hash);
 	lua_setfield(L, LUA_GLOBALSINDEX, "from_hash");
 	lua_pushcfunction(L, lua_to_hash);
-	lua_setfield(L, LUA_GLOBALSINDEX, "to_hash");
+	lua_setfield(L, LUA_GLOBALSINDEX, "hash");
 	lua_pushcfunction(L, lua_get_registry);
 	lua_setfield(L, LUA_GLOBALSINDEX, "get_registry");
 	lua_pushcfunction(L, lua_messagebox);
