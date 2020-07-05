@@ -67,6 +67,8 @@ void load_lua_funcs(lua_State *L)
 	lua_setfield(L, LUA_GLOBALSINDEX, "get_registry");
 	lua_pushcfunction(L, lua_messagebox);
 	lua_setfield(L, LUA_GLOBALSINDEX, "messagebox");
+	lua_pushcfunction(L, lua_getKeyState);
+	lua_setfield(L, LUA_GLOBALSINDEX, "getKeyState");
 }
 
 using swig_dycast_func = void*;
@@ -178,6 +180,13 @@ int list_modules(lua_State *L) {
 
 extern __int64 __fastcall lua_load_pseudo(lua_State *L, __int64 a2, char *data, const char *chunkname);
 extern void lua_pushlstring_fake(lua_State *L, const char *s, size_t len);
+
+int lua_getKeyState(lua_State* L)
+{
+	const char* str = lua_tostring(L, 1);
+	lua_pushboolean(L, GetKeyState(str[0]) & 0x8000);
+	return 1;
+}
 
 int lua_messagebox(lua_State *L)
 {
