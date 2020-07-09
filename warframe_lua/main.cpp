@@ -70,18 +70,15 @@ bool selffcall = false;
 
 bool LoadFunction_selffcall = false;
 Proto *fake_LoadFunction(LoadState* S, TString* p) {
-	//dump_bin((char*)Z->p, Z->n);
-	//dump_bin((char*)S->Z->p, S->Z->n);
 	bool firstCall = false;
 	if (!LoadFunction_selffcall) {
-		printf("%s %s pos: %d %d %d\n", get_temp_path(), get_temp_name(), int(S->b->n), int(S->b->buffsize), int(S->Z->n));
+		printf("loading %s %s\n", get_temp_path(), get_temp_name());
 		dump_bin((char*)S->Z->p, S->Z->n);
 		LoadFunction_selffcall = true;
 		firstCall = true;
 	}
 	Proto* func = imp_LoadFunction(S, p);
 	if (firstCall) {
-		MessageBoxA(NULL, "a", "a", NULL);
 		add_proto(nullptr, func, get_temp_path(), get_temp_name());
 		LoadFunction_selffcall = false;
 	}
@@ -116,9 +113,9 @@ __int64 __fastcall lua_load_pseudo(lua_State *L, __int64 a2, char *data, const c
 	{
 		autorun_executed = true;
 
-		//load_lua_funcs(L);
-		//load_const_config(L);
-		//autoexec(L);
+		load_lua_funcs(L);
+		load_const_config(L);
+		autoexec(L);
 	}
 
 	//MessageBox(0, "", "", 0);

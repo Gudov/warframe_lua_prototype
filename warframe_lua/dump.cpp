@@ -88,7 +88,7 @@ void set_dump_path(char *path, char *name)
 void dump_bin(char *buff, size_t size)
 {
 	if (!dump) {
-		//return;
+		return;
 	}
 
 	char path[255];

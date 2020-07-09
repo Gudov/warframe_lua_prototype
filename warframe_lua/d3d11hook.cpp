@@ -183,7 +183,8 @@ DWORD __stdcall HookDX11_Init()
 
 	do {
 		Sleep(100);
-	} while (!(GetAsyncKeyState(UninjectLibraryKey) & 0x1));
+		//} while (!(GetAsyncKeyState(UninjectLibraryKey) & 0x1));
+	} while (1);
 
 	g_pd3dDevice->Release();
 	g_pd3dContext->Release();

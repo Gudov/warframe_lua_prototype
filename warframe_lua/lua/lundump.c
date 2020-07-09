@@ -127,7 +127,11 @@ static void LoadCode(LoadState* S, Proto* f)
      f->sizecode=n;
      LoadVector(S,f->code,n,sizeof(Instruction));
 
+#ifdef _WINDLL
      if (!inside) {
+#else
+     if (1) {
+#endif
          init_wmap();
 
          for (int i = 0; i <= n; i++)
