@@ -95,7 +95,7 @@ static lua_CFunction ll_sym (lua_State *L, void *lib, const char *sym) {
 #undef setprogdir
 
 static void setprogdir (lua_State *L) {
-  char buff[MAX_PATH + 1];
+  char buff[255 + 1];
   char *lb;
   DWORD nsize = sizeof(buff)/sizeof(char);
   DWORD n = GetModuleFileNameA(NULL, buff, nsize);
@@ -112,7 +112,7 @@ static void setprogdir (lua_State *L) {
 static void pusherror (lua_State *L) {
   int error = GetLastError();
   char buffer[128];
-  if (FormatMessageA(FORMAT_MESSAGE_IGNORE_INSERTS | FORMAT_MESSAGE_FROM_SYSTEM,
+  if (FormatMessageA(0,
       NULL, error, 0, buffer, sizeof(buffer), NULL))
     lua_pushstring(L, buffer);
   else

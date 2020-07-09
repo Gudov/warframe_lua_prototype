@@ -1,0 +1,75 @@
+﻿  lapi.c
+  lauxlib.c
+  lbaselib.c
+c:\src\lua\lua51\lua51\lbaselib.c(212): warning C4244: функция: преобразование "int" в "lua_Number", возможна потеря данных
+  lcode.c
+c:\src\lua\lua51\lua51\lcode.c(649): warning C4244: =: преобразование "double" в "lua_Number", возможна потеря данных
+c:\src\lua\lua51\lua51\lcode.c(650): warning C4244: =: преобразование "double" в "lua_Number", возможна потеря данных
+  ldblib.c
+  ldebug.c
+  ldo.c
+  ldump.c
+  lfunc.c
+  lgc.c
+  linit.c
+  liolib.c
+c:\src\lua\lua51\lua51\liolib.c(275): warning C4477: "fscanf": в строке форматирования "%lf" требуется аргумент типа "double *", но вариативный аргумент "1" имеет тип "lua_Number *"
+  c:\src\lua\lua51\lua51\liolib.c(275): note: рекомендуется использовать "%f" в строке форматирования
+  llex.c
+  lmathlib.c
+c:\src\lua\lua51\lua51\lmathlib.c(27): warning C4244: функция: преобразование "double" в "lua_Number", возможна потеря данных
+c:\src\lua\lua51\lua51\lmathlib.c(32): warning C4244: функция: преобразование "double" в "lua_Number", возможна потеря данных
+c:\src\lua\lua51\lua51\lmathlib.c(37): warning C4244: функция: преобразование "double" в "lua_Number", возможна потеря данных
+c:\src\lua\lua51\lua51\lmathlib.c(42): warning C4244: функция: преобразование "double" в "lua_Number", возможна потеря данных
+c:\src\lua\lua51\lua51\lmathlib.c(47): warning C4244: функция: преобразование "double" в "lua_Number", возможна потеря данных
+c:\src\lua\lua51\lua51\lmathlib.c(52): warning C4244: функция: преобразование "double" в "lua_Number", возможна потеря данных
+c:\src\lua\lua51\lua51\lmathlib.c(57): warning C4244: функция: преобразование "double" в "lua_Number", возможна потеря данных
+c:\src\lua\lua51\lua51\lmathlib.c(62): warning C4244: функция: преобразование "double" в "lua_Number", возможна потеря данных
+c:\src\lua\lua51\lua51\lmathlib.c(67): warning C4244: функция: преобразование "double" в "lua_Number", возможна потеря данных
+c:\src\lua\lua51\lua51\lmathlib.c(72): warning C4244: функция: преобразование "double" в "lua_Number", возможна потеря данных
+c:\src\lua\lua51\lua51\lmathlib.c(77): warning C4244: функция: преобразование "double" в "lua_Number", возможна потеря данных
+c:\src\lua\lua51\lua51\lmathlib.c(82): warning C4244: функция: преобразование "double" в "lua_Number", возможна потеря данных
+c:\src\lua\lua51\lua51\lmathlib.c(87): warning C4244: функция: преобразование "double" в "lua_Number", возможна потеря данных
+c:\src\lua\lua51\lua51\lmathlib.c(92): warning C4244: функция: преобразование "double" в "lua_Number", возможна потеря данных
+c:\src\lua\lua51\lua51\lmathlib.c(99): warning C4244: функция: преобразование "double" в "lua_Number", возможна потеря данных
+c:\src\lua\lua51\lua51\lmathlib.c(100): warning C4244: функция: преобразование "double" в "lua_Number", возможна потеря данных
+c:\src\lua\lua51\lua51\lmathlib.c(105): warning C4244: функция: преобразование "double" в "lua_Number", возможна потеря данных
+c:\src\lua\lua51\lua51\lmathlib.c(110): warning C4244: функция: преобразование "double" в "lua_Number", возможна потеря данных
+c:\src\lua\lua51\lua51\lmathlib.c(115): warning C4244: функция: преобразование "double" в "lua_Number", возможна потеря данных
+c:\src\lua\lua51\lua51\lmathlib.c(120): warning C4244: функция: преобразование "double" в "lua_Number", возможна потеря данных
+c:\src\lua\lua51\lua51\lmathlib.c(125): warning C4244: функция: преобразование "double" в "lua_Number", возможна потеря данных
+c:\src\lua\lua51\lua51\lmathlib.c(130): warning C4244: функция: преобразование "double" в "lua_Number", возможна потеря данных
+c:\src\lua\lua51\lua51\lmathlib.c(135): warning C4244: функция: преобразование "double" в "lua_Number", возможна потеря данных
+c:\src\lua\lua51\lua51\lmathlib.c(141): warning C4244: функция: преобразование "double" в "lua_Number", возможна потеря данных
+c:\src\lua\lua51\lua51\lmathlib.c(147): warning C4244: функция: преобразование "double" в "lua_Number", возможна потеря данных
+c:\src\lua\lua51\lua51\lmathlib.c(193): warning C4244: функция: преобразование "double" в "lua_Number", возможна потеря данных
+c:\src\lua\lua51\lua51\lmathlib.c(200): warning C4244: функция: преобразование "double" в "lua_Number", возможна потеря данных
+c:\src\lua\lua51\lua51\lmathlib.c(253): warning C4305: функция: усечение из "double" в "lua_Number"
+  lmem.c
+  loadlib.c
+  lobject.c
+c:\src\lua\lua51\lua51\lobject.c(92): warning C4244: =: преобразование "double" в "lua_Number", возможна потеря данных
+  lopcodes.c
+  loslib.c
+c:\src\lua\lua51\lua51\loslib.c(197): warning C4244: функция: преобразование "double" в "lua_Number", возможна потеря данных
+  lparser.c
+  Создание кода...
+  Компиляция...
+  lstate.c
+  lstring.c
+  lstrlib.c
+  ltable.c
+  ltablib.c
+  ltm.c
+  lua.c
+  luac.c
+  lundump.c
+  lvm.c
+c:\src\lua\lua51\lua51\lvm.c(325): warning C4244: =: преобразование "double" в "lua_Number", возможна потеря данных
+c:\src\lua\lua51\lua51\lvm.c(326): warning C4244: =: преобразование "double" в "lua_Number", возможна потеря данных
+c:\src\lua\lua51\lua51\lvm.c(487): warning C4244: =: преобразование "double" в "lua_Number", возможна потеря данных
+c:\src\lua\lua51\lua51\lvm.c(491): warning C4244: =: преобразование "double" в "lua_Number", возможна потеря данных
+  lzio.c
+  print.c
+  Создание кода...
+  lua51.vcxproj -> C:\src\lua\lua51\Debug\lua51.exe

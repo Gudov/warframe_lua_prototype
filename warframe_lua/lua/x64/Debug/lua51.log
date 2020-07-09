@@ -1,0 +1,5 @@
+﻿  ldump.c
+c:\src\lua\lua51\lua51\ldump.c(102): warning C4267: функция: преобразование из "size_t" в "int"; возможна потеря данных
+c:\src\lua\lua51\lua51\ldump.c(107): warning C4267: функция: преобразование из "size_t" в "int"; возможна потеря данных
+c:\src\lua\lua51\lua51\ldump.c(204): warning C4090: функция: разные квалификаторы "const"
+  lua51.vcxproj -> C:\src\lua\lua51\x64\Debug\lua51.exe

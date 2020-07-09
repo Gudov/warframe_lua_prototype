@@ -14,6 +14,7 @@ extern "C"
 	extern __int64 imp_lua_bytecode_load(lua_State **a1, void *sc, float a3);
 	extern void imp_lua_time_error(__int64 a1);
 	extern __int64 imp_load_bytecode(void *script_manager, void *lua_struct);
+	extern Proto* imp_LoadFunction(void *, void *);
 
 	extern void *lua_bytecode_load;
 	extern void *lua_pushlstring_offset;

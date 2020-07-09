@@ -11,6 +11,7 @@ Proto* fake_luaU_undump(lua_State* L, ZIO* Z, Mbuffer* buff, const char* name)
 {
 	dump_bin((char*)Z->p, Z->n);
 	Proto *func = imp_luaU_undump(L, Z, buff, name);
+	MessageBoxA(NULL, "WRONG", "WRONG", NULL);
 	add_proto(L, func, get_temp_path(), get_temp_name());
 	return func;
 }

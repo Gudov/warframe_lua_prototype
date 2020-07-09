@@ -182,14 +182,11 @@ static int pmain(lua_State* L)
  }
  return 0;
 }
-
-int wmain()
-{
-	char* asd[2] = { "", "in.lua" };
-	wmain(2, asd);
-}
-
-int wwmain(int argc, char* argv[])
+#ifdef _WINDLL
+int not_main(int argc, char* argv[])
+#else
+int main(int argc, char* argv[])
+#endif
 {
  lua_State* L;
  struct Smain s;

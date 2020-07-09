@@ -98,30 +98,27 @@ typedef struct global_State {
 ** `per thread' state
 */
 struct lua_State {
-	GCObject *next; 
-	lu_byte tt; 
-	lu_byte marked;
-	lu_byte status;
-	char empty[5];
+  CommonHeader;
+  lu_byte status;
   StkId top;  /* first free slot in the stack */
   StkId base;  /* base of current function */
   global_State *l_G;
-  CallInfo *ci;  /* call info for current function */						//field_28
-  const Instruction *savedpc;  /* `savedpc' of current function */			//field_30
-  StkId stack_last;  /* last free slot in the stack */						//field_38
-  StkId stack;  /* stack base */											//field_40
-  CallInfo *end_ci;  /* points after end of ci array*/						//field_48
-  CallInfo *base_ci;  /* array of CallInfo's */								//field_50
-  int stacksize;															//field_58
-  int size_ci;  /* size of array `base_ci' */								//	field_58 + 4
-  unsigned short nCcalls;  /* number of nested C calls */					//field_60 + 0
-  unsigned short baseCcalls;  /* nested C calls when resuming coroutine */	//field_60 + 2
-  lu_byte hookmask;															//field_60 + 3
-  lu_byte allowhook;														//field_60 + 4
-  int basehookcount;														//field_68
-  int hookcount;															//field_68 + 4
-  lua_Hook hook;															//field_70
-  TValue l_gt;  /* table of globals */										//field_78
+  CallInfo *ci;  /* call info for current function */
+  const Instruction *savedpc;  /* `savedpc' of current function */
+  StkId stack_last;  /* last free slot in the stack */
+  StkId stack;  /* stack base */
+  CallInfo *end_ci;  /* points after end of ci array*/
+  CallInfo *base_ci;  /* array of CallInfo's */
+  int stacksize;
+  int size_ci;  /* size of array `base_ci' */
+  unsigned short nCcalls;  /* number of nested C calls */
+  unsigned short baseCcalls;  /* nested C calls when resuming coroutine */
+  lu_byte hookmask;
+  lu_byte allowhook;
+  int basehookcount;
+  int hookcount;
+  lua_Hook hook;
+  TValue l_gt;  /* table of globals */
   TValue env;  /* temporary place for environments */
   GCObject *openupval;  /* list of open upvalues in this stack */
   GCObject *gclist;

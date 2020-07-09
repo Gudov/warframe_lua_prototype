@@ -38,6 +38,9 @@ struct const_change_t
 extern std::unordered_map<std::string, proto_info_t*> protos_name;
 extern std::unordered_map<std::string, proto_info_t*> protos_full;
 
+extern std::unordered_map<std::string, const_change_t*> proto_change_name;
+extern std::unordered_map<std::string, bool> const_conf_enabled;
+
 extern std::string const_to_load;
 
 void load_const_json(lua_State *L, std::string);

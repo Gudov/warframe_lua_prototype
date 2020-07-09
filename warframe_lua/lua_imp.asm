@@ -10,9 +10,26 @@ _DATA SEGMENT
 	EXTERN lua_bytecode_load: PROC
 	EXTERN lua_time_error: PROC
 	EXTERN load_bytecode: PROC
+	EXTERN ori_LoadFunction: PROC
 _DATA ENDS
 
 _TEXT SEGMENT
+
+	PUBLIC imp_LoadFunction
+	imp_LoadFunction PROC
+		mov		[rsp+10h], rbx
+		mov		[rsp+18h], rbp
+		push	rsi
+		push	rdi
+		push	r13
+		push	r14
+		push	r15
+		sub		rsp, 20h
+
+		mov		rax, qword ptr ori_LoadFunction
+		add		rax, 16h
+		jmp		rax
+	imp_LoadFunction ENDP
 
 	PUBLIC imp_load_bytecode
 	imp_load_bytecode PROC
@@ -89,36 +106,32 @@ _TEXT SEGMENT
 
 	PUBLIC imp_luaU_undump
 	imp_luaU_undump PROC
-		mov     rax, rsp
-		push    r15
-		sub     rsp, 60h
-		mov     [rax+18h], rbx
-		mov     r15, rcx
-		mov     [rax-10h], rbp
-		mov     [rax-20h], rdi
-		mov     rdi, rdx
-		movzx   edx, byte ptr [r9]
-		mov     [rax-28h], r14
+		mov		r11, rsp
+		push	r15
+		sub		rsp, 60h
+		mov		[r11+18h], rbx
+		mov		r15, rcx
+		mov		[r11-10h], rbp
+		mov		bl, 7Fh
 
 		mov		rax, qword ptr luaU_undump_or
-		add		rax, 23h
+		add		rax, 16h
 		jmp		rax
 	imp_luaU_undump ENDP
 
 	PUBLIC imp_lua_load
 	imp_lua_load PROC
-		mov     r11, rsp
-		mov     [r11+8], rbx
-		mov     [r11+10h], rbp
-		mov     [r11+18h], rsi
-		push    rdi
-		sub     rsp, 80h
-		mov     rbp, rcx
-		mov     [r11-10h], rcx
-		xor     ecx, ecx
+		mov		r11, rsp
+		mov		[r11+8], rbx
+		mov		[r11+10h], rbp
+		mov		[r11+18h], rsi
+		push	rdi
+		sub		rsp, 80h
+		mov		rbp, rcx
+		mov		[r11-10h], rcx
 
 		mov		rax, qword ptr lua_load_or
-		add		rax, 20h
+		add		rax, 1Eh
 		jmp		rax
 	imp_lua_load ENDP
 

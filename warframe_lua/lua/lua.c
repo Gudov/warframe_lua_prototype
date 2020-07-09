@@ -374,7 +374,7 @@ static int pmain (lua_State *L) {
 }
 
 
-int llmain (int argc, char **argv) {
+int lmain (int argc, char **argv) {
   int status;
   struct Smain s;
   lua_State *L = lua_open();  /* create state */

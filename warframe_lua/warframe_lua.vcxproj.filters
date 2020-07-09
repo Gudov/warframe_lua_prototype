@@ -19,6 +19,9 @@
     <Filter Include="window">
       <UniqueIdentifier>{3f547868-eeb0-4ed5-b11e-e13a97ef5707}</UniqueIdentifier>
     </Filter>
+    <Filter Include="inmgui">
+      <UniqueIdentifier>{da6717ba-1cf5-46d4-8d97-07cea7bc5a4e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -144,6 +147,30 @@
     <ClCompile Include="proto.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
+    <ClCompile Include="win_imgui.cpp">
+      <Filter>window</Filter>
+    </ClCompile>
+    <ClCompile Include="imgui_imp_dx11.cpp">
+      <Filter>window</Filter>
+    </ClCompile>
+    <ClCompile Include="d3d11hook.cpp">
+      <Filter>window</Filter>
+    </ClCompile>
+    <ClCompile Include="InputHook.cpp">
+      <Filter>window</Filter>
+    </ClCompile>
+    <ClCompile Include="menu.cpp">
+      <Filter>window</Filter>
+    </ClCompile>
+    <ClCompile Include="ImGui\imgui.cpp">
+      <Filter>inmgui</Filter>
+    </ClCompile>
+    <ClCompile Include="ImGui\imgui_demo.cpp">
+      <Filter>inmgui</Filter>
+    </ClCompile>
+    <ClCompile Include="ImGui\imgui_draw.cpp">
+      <Filter>inmgui</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <MASM Include="lua_imp.asm">
@@ -255,6 +282,39 @@
     </ClInclude>
     <ClInclude Include="proto.h">
       <Filter>Исходные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="win_imgui.h">
+      <Filter>window</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui_impl_dx11.h">
+      <Filter>window</Filter>
+    </ClInclude>
+    <ClInclude Include="d3d11hook.h">
+      <Filter>window</Filter>
+    </ClInclude>
+    <ClInclude Include="InputHook.h">
+      <Filter>window</Filter>
+    </ClInclude>
+    <ClInclude Include="menu.h">
+      <Filter>window</Filter>
+    </ClInclude>
+    <ClInclude Include="ImGui\imconfig.h">
+      <Filter>inmgui</Filter>
+    </ClInclude>
+    <ClInclude Include="ImGui\imgui.h">
+      <Filter>inmgui</Filter>
+    </ClInclude>
+    <ClInclude Include="ImGui\imgui_internal.h">
+      <Filter>inmgui</Filter>
+    </ClInclude>
+    <ClInclude Include="ImGui\stb_rect_pack.h">
+      <Filter>inmgui</Filter>
+    </ClInclude>
+    <ClInclude Include="ImGui\stb_textedit.h">
+      <Filter>inmgui</Filter>
+    </ClInclude>
+    <ClInclude Include="ImGui\stb_truetype.h">
+      <Filter>inmgui</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
