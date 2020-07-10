@@ -240,6 +240,7 @@ void apply_const_change(lua_State *L, Proto *proto, const_change_t *const_change
 		if (selected->k[path[path.size() - 1]].tt != replace.second.tt) {
 			return;
 		}
+
 		selected->k[path[path.size()-1]].value = replace.second.value;
 	}
 }

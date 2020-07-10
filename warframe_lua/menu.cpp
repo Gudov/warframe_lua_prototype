@@ -123,6 +123,9 @@ void Menu::Render()
 			drawLoadedConst();
 		}
 		
+		if (ImGui::CollapsingHeader("lua run")) {
+			drawLua();
+		}
 
 		//ImGui::PushItemWidth(ImGui::GetWindowWidth() * 0.65f);
 		//ImGui::PushItemWidth(-140);
@@ -169,10 +172,14 @@ void Menu::drawLoadedConst() {
 	for (auto proto : proto_change_name) {
 		const string& name = proto.first;
 		if (const_conf_enabled[name]) {
-			ImGui::PushStyleColor(ImGuiCol_Button, ImVec4(200, 100, 100, 200));
-		}
-		if (ImGui::Button(name.c_str())) {
-			toRemove = name; 
+			string butName = "~~~" + name;
+			if (ImGui::Button(butName.c_str())) {
+				toRemove = name;
+			}
+		} else {
+			if (ImGui::Button(name.c_str())) {
+				toRemove = name;
+			}
 		}
 	}
 

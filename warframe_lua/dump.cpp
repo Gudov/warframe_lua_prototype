@@ -121,6 +121,7 @@ void dump_bin(char *buff, size_t size)
 		char full_path[255];
 		sprintf(full_path, "%s\\%s", path, temp_name);
 		FILE *f = fopen(full_path, "wb");
+		fwrite("\0x7f", 1, 1, f);
 		fwrite(buff, size, 1, f);
 		fclose(f);
 

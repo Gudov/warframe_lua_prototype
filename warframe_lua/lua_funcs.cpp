@@ -198,7 +198,7 @@ int lua_messagebox(lua_State *L)
 int lua_to_hash(lua_State* L)
 {
 	const char *str = luaL_checkstring(L, 1);
-	unsigned int hash = hash_to_int((char *)str, strlen(str), 0);
+	unsigned int hash = hash_to_int((char *)str, strlen(str));
 
 	TValue i_o;
 	*((unsigned int*)(&(i_o.value))) = hash;

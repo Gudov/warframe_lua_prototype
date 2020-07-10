@@ -88,11 +88,11 @@ Proto *fake_LoadFunction(LoadState* S, TString* p) {
 bool pre_init_compelte = false;
 void lua_pushlstring_fake(lua_State *L, const char *s, size_t len)
 {
-	/*if (!pre_init_compelte)
+	if (!pre_init_compelte)
 	{
 		pre_init_compelte = true;
 		load_lua_funcs(L);
-	}*/
+	}
 
 	if (!selffcall)
 	{

@@ -20,7 +20,7 @@ void autorun_lua(lua_State *L);
 void set_luarun(std::string name);
 void dump_hash();
 
-unsigned int __fastcall hash_to_int(char* a1, unsigned int len, int a3);
-unsigned int __fastcall fake_hash(char* a1, unsigned int len, int a3);
+unsigned int __fastcall hash_to_int(char* a1, unsigned int len);
+unsigned int __fastcall fake_hash(char* a1, unsigned int len);
 
 extern std::unordered_map<uint32_t, std::string> str_hash;;

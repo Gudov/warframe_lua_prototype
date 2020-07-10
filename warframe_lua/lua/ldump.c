@@ -282,7 +282,7 @@ static void DumpHeader(DumpState* D)
 {
 	if (WARFRAME_LUA)
 	{
-		char h[1] = "\x7F";
+		char h[1] = {0x7F};
 		DumpBlock(h, 1, D);
 	}
 	else

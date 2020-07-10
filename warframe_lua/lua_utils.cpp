@@ -124,7 +124,7 @@ void dump_hash()
 
 unsigned int __fastcall fake_hash(char* a1, unsigned int len, int a3)
 {
-	unsigned int hash = hash_to_int(a1, len, a3);
+	unsigned int hash = hash_to_int(a1, len);
 	if (str_hash.find(hash) == str_hash.end()) {
 		str_hash[hash] = a1;
 	}
@@ -132,46 +132,17 @@ unsigned int __fastcall fake_hash(char* a1, unsigned int len, int a3)
 	return hash;
 }
 
-unsigned int __fastcall hash_to_int(char* a1, unsigned int len, int a3)
+unsigned int __fastcall hash_to_int(char* val, unsigned int len)
 {
-	char* v3; // r10
-	unsigned int v4; // er9
-	unsigned __int64 v5; // r8
-	unsigned int v6; // eax
-	unsigned int v7; // edx
-	int v8; // edx
+	uint32_t hash = 0xF42E1C3E;
+	uint32_t prime = 0x1000193;
 
-	v3 = a1;
-	v4 = a3 ^ len;
-	if ((int)len >= 4)
-	{
-		v5 = (unsigned __int64)len >> 2;
-		len -= 4 * (len >> 2);
-		do
-		{
-			v6 = 0x5BD1E995 * *(DWORD*)v3;
-			v3 += 4;
-			v4 = (0x5BD1E995 * (v6 ^ (v6 >> 24))) ^ (0x5BD1E995 * v4);
-			--v5;
-		} while (v5);
+	for (int i = 0; i < len; ++i) {
+		uint8_t value = val[i];
+		hash = hash ^ value;
+		hash *= prime;
 	}
-	v7 = len - 1;
-	if (!v7)
-		goto LABEL_9;
-	v8 = v7 - 1;
-	if (!v8)
-	{
-	LABEL_8:
-		v4 ^= (unsigned __int8)v3[1] << 8;
-	LABEL_9:
-		v4 = 0x5BD1E995 * (v4 ^ (unsigned __int8)*v3);
-		return (0x5BD1E995 * (v4 ^ (v4 >> 13))) ^ ((0x5BD1E995 * (v4 ^ (v4 >> 13))) >> 15);
-	}
-	if (v8 == 1)
-	{
-		v4 ^= (unsigned __int8)v3[2] << 16;
-		goto LABEL_8;
-	}
-	return (0x5BD1E995 * (v4 ^ (v4 >> 13))) ^ ((0x5BD1E995 * (v4 ^ (v4 >> 13))) >> 15);
+
+	return hash;
 }
 
