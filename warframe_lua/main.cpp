@@ -121,18 +121,18 @@ __int64 __fastcall lua_load_pseudo(lua_State *L, __int64 a2, char *data, const c
 	//MessageBox(0, "", "", 0);
 	printf("loading lua file %s / %s\n", get_temp_path(), get_temp_name());
 
-	/*lua_getglobal(L, "hook_pre_load");
+	lua_getglobal(L, "hook_pre_load");
 	lua_pushstring(L, get_temp_path());
 	lua_pushstring(L, get_temp_name());
 	lua_pcall_or(L, 2, 0, 0);
 
-	lua_getglobal(L, "hook_post_load");*/
+	lua_getglobal(L, "hook_post_load");
 	
 	__int64 status = imp_lua_load(L, a2, (long long)data, chunkname);
 	 
-	/*lua_pushstring(L, get_temp_path());
+	lua_pushstring(L, get_temp_path());
 	lua_pushstring(L, get_temp_name());
-	lua_pcall_or(L, 3, 1, 0);*/
+	lua_pcall_or(L, 3, 1, 0);
 
 	return status;
 }
